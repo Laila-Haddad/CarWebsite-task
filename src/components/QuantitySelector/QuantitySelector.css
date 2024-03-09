@@ -1,0 +1,42 @@
+.counter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+
+  .quantity-input {
+    width: 32px;
+    border:none; 
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 1rem;
+    user-select: none;
+    font-family: var(--righteous);
+    background-color: transparent;
+  }
+  
+
+  .quantity-input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .quantity-input::-webkit-inner-spin-button,
+  .quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .quantity-input[type='number'] {
+    -moz-appearance: textfield; 
+  }
+  

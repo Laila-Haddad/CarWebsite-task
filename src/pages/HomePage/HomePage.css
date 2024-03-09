@@ -1,0 +1,67 @@
+.landing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing h6 {
+  margin: 1rem 0;
+}
+
+.landing h1 {
+  margin: 1rem 0;
+}
+
+.landing-description {
+  margin-bottom: 2rem;
+  font-family: var(--righteous);
+}
+
+.landing-image {
+  max-width: 50%;
+}
+
+.landing-image img {
+  width: 100%;
+  height: auto;
+  transform: translateX(60px);
+  user-select: none;
+}
+.landing h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.landing-img-small{
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .landing-image img {
+display: none;
+  }
+  .landing button{
+   margin: auto;
+   display: block;
+  }
+  .landing-img-small{
+    display: block;
+    position: absolute;
+    width: 70%;
+    /* height: 50%; */
+    right: 0;
+  z-index: -1;
+
+    
+  }
+  
+}
+
+@media (max-width: 550px) {
+
+  .landing-img-small{
+    width:90%; 
+    right: 0;
+
+  } 
+}

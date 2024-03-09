@@ -1,0 +1,20 @@
+.color-selector {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.color-button {
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  outline: none;
+}
+
+.color-button + .color-button {
+  margin-left: 2rem;
+}
+.color-button.selected {
+  border: 3px solid var(--pink);
+}

@@ -1,0 +1,26 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  
+  .breadcrumb-item {
+    color: var(--dark-grey); 
+    text-decoration: none;
+    font-size: 0.875rem; 
+    padding: 0 0.5rem; 
+  font-family: var(--roboto);
+    
+  }
+  
+  .breadcrumb-item:hover {
+    text-decoration: underline; 
+  }
+  
+  .breadcrumb-separator {
+    color: var(--dark-grey); 
+    font-family: var(--roboto);
+
+    padding: 0 0.25rem; 
+  }
+  
