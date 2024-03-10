@@ -59,10 +59,13 @@ nav {
   #hamburger-btn {
     display: block;
     z-index: 100;
+    display: flex;
+    align-content: center;
   }
   .hamburger-menu {
     display: inline-block;
     user-select: none;
+  
   }
   .nav-menu {
     position: fixed;
@@ -85,13 +88,29 @@ nav {
     width: fit-content;
   }
 
-  .nav-btns {
+  .nav-btns  {
     display: none;
+  }
+
+  .nav-btns img {
+    transform: translateX(30px);
+  
   }
 
   nav {
     padding: 20px 40px;
 
+  }
+
+
+  .menu-overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 -30px;
+    background-color: rgba(0, 0, 0, 0.502);
+     backdrop-filter: blur(1.1px);
+    z-index: 99;
   }
 }
 

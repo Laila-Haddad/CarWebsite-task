@@ -19,7 +19,7 @@ function LandingSection() {
               The culmination of comfort, luxury, and powerful living is
               embodied in the First-Ever BMUX7 - the biggest BMU ever built.
             </p>
-            <a href="#search-bar"><button className="filled-btn" >EXPLORE</button></a>
+            <a href="#products"><button className="filled-btn" >EXPLORE</button></a>
           </div>
           <div className="landing-image">
             <img src={carPic} alt="Car" />

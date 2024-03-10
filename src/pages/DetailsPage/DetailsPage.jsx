@@ -5,7 +5,7 @@ import ImageSlider from "../../components/ImageSlider/ImageSlider";
 import "./DetailsPage.css";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import ProductPurchase from "./ProductPurchase";
-import detailsBack from "../../assets/details-background.png";
+import detailsBack from "../../assets/details-background2.png";
 import ProductInfoSection from "./ProductInfoSection";
 const DetailsPage = () => {
   let { id } = useParams();
@@ -15,6 +15,14 @@ const DetailsPage = () => {
   const handleImage = (index) => {
     setCurrentImage(car.images[index]);
   };
+
+
+  useEffect(() => {
+    document.body.classList.add("body-background")
+    return () => {
+      document.body.classList.remove("body-background")
+    };
+  }, []); 
 
   useEffect(() => {
     getCarDetails(id).then((fetchedCar) => {
@@ -30,8 +38,6 @@ const DetailsPage = () => {
       <div className="product-details">
         {car.name && (
           <>
-      <img src={detailsBack} alt="background" />
-
             <div
               style={{ display: "flex", flexDirection: "column", gap: "20px" }}
             >
@@ -63,7 +69,11 @@ const DetailsPage = () => {
                 />
               </div>
               <div>
-                <ProductPurchase colors={car.colors} price={car.rentPrice} item={car} />
+                <ProductPurchase
+                  colors={car.colors}
+                  price={car.rentPrice}
+                  item={car}
+                />
               </div>
             </div>
           </>

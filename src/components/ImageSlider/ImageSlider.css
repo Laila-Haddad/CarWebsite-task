@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.darkOverlay{
+  filter: brightness(40%);
+}
+
 .slider-window {
   display: flex;
   position: relative;

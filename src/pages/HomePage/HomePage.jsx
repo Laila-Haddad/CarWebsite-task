@@ -28,7 +28,7 @@ const HomePage = () => {
             <h2>Find by Car Type</h2>
             <ImageSlider items={brands} display="home"></ImageSlider>
           </div>
-          <div>
+          <div  id="products">
             <h2>Top Categories</h2>
             <ProductDisplay items={cars} displayType="grid"></ProductDisplay>
           </div>

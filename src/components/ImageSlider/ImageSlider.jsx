@@ -9,7 +9,6 @@ import ArrowBack from "../../assets/arrow-left.png";
 
 const ImageSlider = ({ items, display , handleImage=null}) => {
   const [offset, setOffset] = useState(0);
-  // console.log(items);
 
   const changeSlide = (n) => {
     let newOffset = n;
@@ -32,7 +31,6 @@ const ImageSlider = ({ items, display , handleImage=null}) => {
   };
 
   let slides = displaySlides();
-
   return (
     <div
       className={display === "detail" ?   " detail-slider"  : "slider"}
@@ -50,7 +48,7 @@ const ImageSlider = ({ items, display , handleImage=null}) => {
           className="left-control"
         />
         {slides.map((item, index) => (
-          <ImageSlide key={index} item={item} display={display} />
+          <ImageSlide key={index} index={index} item={item} display={display} />
         ))}
 
         <img
