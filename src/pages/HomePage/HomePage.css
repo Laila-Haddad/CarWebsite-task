@@ -32,36 +32,29 @@
   margin-bottom: 30px;
 }
 
-.landing-img-small{
+.landing-img-small,
+.landing-car-small {
   display: none;
 }
 
 @media (max-width: 750px) {
   .landing-image img {
-display: none;
+    display: none;
   }
-  .landing button{
-   margin: auto;
-   display: block;
+  .landing button {
+    margin: auto;
+    display: block;
   }
-  .landing-img-small{
+  .landing-img-small {
     display: block;
     position: absolute;
-    width: 70%;
-    /* height: 50%; */
-    right: 0;
-  z-index: -1;
-
-    
+    width: 100%;
+    transform: rotateY(180deg);
+    height:70%;
+    left: 0;
+    z-index: -1;
   }
-  
+
+
 }
 
-@media (max-width: 550px) {
-
-  .landing-img-small{
-    width:90%; 
-    right: 0;
-
-  } 
-}

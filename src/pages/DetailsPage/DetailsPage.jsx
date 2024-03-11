@@ -18,6 +18,7 @@ const DetailsPage = () => {
 
 
   useEffect(() => {
+    
     document.body.classList.add("body-background")
     return () => {
       document.body.classList.remove("body-background")
@@ -28,7 +29,7 @@ const DetailsPage = () => {
     getCarDetails(id).then((fetchedCar) => {
       setCar(fetchedCar);
       if (fetchedCar.images && fetchedCar.images.length > 0) {
-        setCurrentImage(fetchedCar.imageUrl);
+        setCurrentImage(fetchedCar.images[0]);
       }
     });
   }, [id]);
@@ -61,7 +62,7 @@ const DetailsPage = () => {
               </div>
             </div>
             <div className="product-info-details">
-              <h5 style={{ color: "black" }}>Details</h5>
+              <h5 style={{ color: "black"}}>Details</h5>
               <div>
                 <ProductInfoSection
                   rating={car.rating}

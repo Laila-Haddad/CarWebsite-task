@@ -10,7 +10,9 @@
         "cars/car1.png",
         "cars/car2.png",
         "cars/car3.png",
-        "cars/car4.png"
+        "cars/car4.png",
+        "cars/car6.png"
+
       ],
       "type": "auto",
       "rentPrice": 1500,
@@ -31,8 +33,8 @@
       "brand": "Ferrari",
       "imageUrl": "cars/car2.png",
       "images": [
-        "cars/car1.png",
         "cars/car2.png",
+        "cars/car1.png",
         "cars/car3.png",
         "cars/car4.png"
       ],
@@ -55,8 +57,8 @@
       "brand": "Lamborghini",
       "imageUrl": "cars/car3.png",
       "images": [
-        "cars/car1.png",
-        "cars/car2.png",
+        "cars/car3.png",
+        "cars/car5.png",
         "cars/car3.png",
         "cars/car4.png"
       ],
@@ -79,10 +81,10 @@
       "brand": "Porsche",
       "imageUrl": "cars/car4.png",
       "images": [
-        "cars/car1.png",
+        "cars/car4.png",
         "cars/car2.png",
         "cars/car3.png",
-        "cars/car4.png"
+        "cars/car1.png"
       ],
       "type": "manual",
       "rentPrice": 900,
@@ -103,7 +105,7 @@
       "brand": "McLaren",
       "imageUrl": "cars/car5.png",
       "images": [
-        "cars/car1.png",
+        "cars/car5.png",
         "cars/car2.png",
         "cars/car3.png",
         "cars/car4.png"
@@ -127,7 +129,7 @@
       "brand": "Aston",
       "imageUrl": "cars/car6.png",
       "images": [
-        "cars/car1.png",
+        "cars/car6.png",
         "cars/car2.png",
         "cars/car3.png",
         "cars/car4.png"

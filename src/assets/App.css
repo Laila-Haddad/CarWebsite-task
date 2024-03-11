@@ -12,10 +12,9 @@
   --roboto: "Roboto", sans-serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
   overflow-y: scroll;
-
 }
 * {
   padding: 0;
@@ -27,12 +26,16 @@ html{
 
 body {
   padding: 0 60px;
+  /* min-height: 100vh; */
+
 }
 
 main {
-  padding: 90px 0;
+  padding: 90px 0 40px 0;
   display: grid;
   gap: 40px;
+  min-height: calc(100vh - 100px);
+
 }
 
 h1 {
@@ -53,7 +56,7 @@ h2 {
 h3 {
   font-family: var(--righteous);
   font-weight: 500;
-  font-size:1.8em;
+  font-size: 1.8em;
 }
 
 h4 {
@@ -67,12 +70,11 @@ p {
   text-transform: capitalize;
 }
 
-
 h5 {
   font-family: var(--righteous);
   font-weight: 500;
   color: var(--pink);
-  font-size:1.5em;
+  font-size: 1.5em;
 }
 
 h6 {
@@ -120,7 +122,6 @@ a {
   h1 {
     font-size: 2.5em;
   }
-
 }
 
 @media (max-width: 550px) {

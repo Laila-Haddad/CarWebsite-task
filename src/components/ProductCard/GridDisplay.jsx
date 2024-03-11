@@ -28,7 +28,7 @@ const GridDisplay = ({ element }) => {
         <h4 className="car-name">{truncateString(element.name)}</h4>
         <div className="car-details">
           <p className="car-seats">
-            <img src={seats} alt="number of seats" />{" "}
+            <img src={seats} alt="number of seats" />
             <span>&nbsp;{element.numOfSeats} Seater</span>
           </p>
           <p className="car-transmission">

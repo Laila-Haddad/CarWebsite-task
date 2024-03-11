@@ -32,7 +32,6 @@ const HomePage = () => {
             <h2>Top Categories</h2>
             <ProductDisplay items={cars} displayType="grid"></ProductDisplay>
           </div>
-          <br></br>
         </>
       )}
     </>

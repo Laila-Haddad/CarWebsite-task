@@ -5,7 +5,6 @@ nav {
   padding: 20px 60px;
   position: fixed;
   width: 100%;
-  /* width: calc(100% - 120px); */
   margin: 0 -60px;
   background-color: var(--white);
   z-index: 100;
@@ -13,6 +12,7 @@ nav {
 
 #logo{
   user-select: none;
+  cursor: pointer;
 
 }
 .nav-menu {
@@ -55,6 +55,10 @@ nav {
   border: none;
   display: none;
 }
+
+.nav-menu .phone-nav {
+  display: none;
+}
 @media only screen and (max-width: 800px) {
   #hamburger-btn {
     display: block;
@@ -67,6 +71,10 @@ nav {
     user-select: none;
   
   }
+  .nav-menu .phone-nav {
+    display: flex;
+  }
+
   .nav-menu {
     position: fixed;
     flex-direction: column;
@@ -77,9 +85,55 @@ nav {
     text-align: center;
     background-color: var(--light-pink);
     padding: 15px;
-    display: none;
     z-index: 2;
+    height: auto;
+    display: none;
   }
+
+
+  .fade {
+    animation-name: fade-left;
+    animation-duration: 0.5s;
+  }
+  
+  @keyframes fade-left {
+    0% {
+      transform: translateY(-40px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translatey(0);
+      opacity: 1;
+    }
+  }
+  
+
+
+  .fade2{
+    animation-name: fade-up;
+    animation-duration: 0.5s;
+
+
+
+  }
+  
+  @keyframes fade-up {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+
+    }
+  
+    100% {
+      transform: translateY(-40px);
+      opacity: 0;
+
+    }
+  }
+  
+
+
   .nav-menu-display {
     display: flex;
     transition: ease-in 1s;
@@ -107,7 +161,7 @@ nav {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    margin: 0 -30px;
+    margin: 0 -60px;
     background-color: rgba(0, 0, 0, 0.502);
      backdrop-filter: blur(1.1px);
     z-index: 99;
@@ -115,7 +169,6 @@ nav {
 }
 
 @media (max-width: 550px) {
-  nav {
+  nav  ,   .menu-overlay{
     margin: 0 -30px;
-  }
-}
+  }}

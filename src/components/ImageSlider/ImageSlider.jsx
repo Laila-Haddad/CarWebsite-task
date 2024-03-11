@@ -8,7 +8,7 @@ import ArrowForward from "../../assets/arrow-right.png";
 import ArrowBack from "../../assets/arrow-left.png";
 
 const ImageSlider = ({ items, display , handleImage=null}) => {
-  const [offset, setOffset] = useState(0);
+  const [offset, setOffset] = useState(2);
 
   const changeSlide = (n) => {
     let newOffset = n;
