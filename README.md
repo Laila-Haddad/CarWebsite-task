@@ -1,8 +1,16 @@
-# React + Vite
+# Ipsum - Car Rental Website
+Welcome to Ipsum, a sleek and user-friendly website designed for renting cars. This project was developed as a training task for MAD Solutions, showcasing a modern web application built with the latest technologies.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- Car Browsing: Users can explore a wide range of cars available for rent, including detailed descriptions and specifications.
+- Easy Rental Process: The site offers an intuitive interface for choosing rental dates, selecting car models, and completing rental bookings.
+- Responsive Design: Crafted with responsiveness in mind, Ipsum ensures a seamless experience across all devices.
 
-Currently, two official plugins are available:
+## Technologies
+- React app built with Vite
+- React Router
+- Vanilla CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Links
+- Link to the live Website : [Ipsum Website](https://main--ipsum-rentacar.netlify.app)
+- Link to the code: [Repo](https://github.com/Laila-Haddad/CarWebsite-task/tree/main)
