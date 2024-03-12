@@ -91,12 +91,12 @@ nav {
   }
 
 
-  .fade {
-    animation-name: fade-left;
+  .fade-in {
+    animation-name: fade-in;
     animation-duration: 0.5s;
   }
   
-  @keyframes fade-left {
+  @keyframes fade-in {
     0% {
       transform: translateY(-40px);
       opacity: 0;
@@ -107,30 +107,25 @@ nav {
       opacity: 1;
     }
   }
-  
 
-
-  .fade2{
-    animation-name: fade-up;
+  .fade-out {
+    animation-name: fade-out;
     animation-duration: 0.5s;
-
-
-
+    animation-fill-mode: forwards; 
   }
   
-  @keyframes fade-up {
+  @keyframes fade-out {
     0% {
-      opacity: 1;
       transform: translateY(0);
-
+      opacity: 1;
     }
   
     100% {
       transform: translateY(-40px);
       opacity: 0;
-
     }
   }
+  
   
 
 

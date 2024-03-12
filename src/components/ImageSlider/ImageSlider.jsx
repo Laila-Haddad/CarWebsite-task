@@ -8,11 +8,11 @@ import ArrowForward from "../../assets/arrow-right.png";
 import ArrowBack from "../../assets/arrow-left.png";
 
 const ImageSlider = ({ items, display , handleImage=null}) => {
-  const [offset, setOffset] = useState(2);
+  const [offset, setOffset] = useState(0);
 
   const changeSlide = (n) => {
     let newOffset = n;
-    if (n <= 0) {
+    if (n < 0) {
       newOffset = items.length - 1;
     } else if (n >= items.length) {
       newOffset = 0;
@@ -24,7 +24,7 @@ const ImageSlider = ({ items, display , handleImage=null}) => {
   const displaySlides = () => {
     let display = [];
     for (let i = 0; i < 4; i++) {
-      let index = (offset + i) % items.length;
+      let index = (items.length+ offset + i-1) % items.length;
       display.push(items[index]);
     }
     return display;

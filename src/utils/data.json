@@ -6,24 +6,13 @@
       "engine": "6000 cc",
       "brand": "Bugatti",
       "imageUrl": "cars/car1.png",
-      "images": [
-        "cars/car1.png",
-        "cars/car2.png",
-        "cars/car3.png",
-        "cars/car4.png",
-        "cars/car6.png"
-
-      ],
+      "images": ["cars/car1.png", "cars/car2.png", "cars/car3.png"],
       "type": "auto",
       "rentPrice": 1500,
       "numOfSeats": 2,
       "description": "A marvel of engineering and design, with unparalleled performance. A marvel of engineering and design, with unparalleled performance.",
       "rating": 5,
-      "colors": [
-        "blue",
-        "black",
-        "white"
-      ],
+      "colors": ["blue", "black", "white"],
       "mileagePerGas": "5KM/1-lt"
     },
     {
@@ -43,11 +32,7 @@
       "numOfSeats": 2,
       "description": "An homage to Ferrari's most powerful V8 engine. A marvel of engineering and design, with unparalleled performance.",
       "rating": 4,
-      "colors": [
-        "red",
-        "yellow",
-        "black"
-      ],
+      "colors": ["red", "yellow", "black"],
       "mileagePerGas": "4KM/1-lt"
     },
     {
@@ -67,11 +52,7 @@
       "numOfSeats": 2,
       "description": "A flagship model representing the pinnacle of Lamborghini's legacy. A marvel of engineering and design, with unparalleled performance.",
       "rating": 4.5,
-      "colors": [
-        "green",
-        "white",
-        "orange"
-      ],
+      "colors": ["green", "white", "orange"],
       "mileagePerGas": "3KM/1-lt"
     },
     {
@@ -91,11 +72,7 @@
       "numOfSeats": 4,
       "description": "Iconic design, relentless performance, and unparalleled legacy. A marvel of engineering and design, with unparalleled performance.",
       "rating": 4.8,
-      "colors": [
-        "silver",
-        "black",
-        "blue"
-      ],
+      "colors": ["silver", "black", "blue"],
       "mileagePerGas": "6KM/1-lt"
     },
     {
@@ -115,11 +92,7 @@
       "numOfSeats": 2,
       "description": "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
       "rating": 3,
-      "colors": [
-        "orange",
-        "grey",
-        "white"
-      ],
+      "colors": ["orange", "grey", "white"],
       "mileagePerGas": "5KM/1-lt"
     },
     {
@@ -139,11 +112,7 @@
       "numOfSeats": 4,
       "description": "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
       "rating": 3.7,
-      "colors": [
-        "green",
-        "black",
-        "silver"
-      ],
+      "colors": ["green", "black", "silver"],
       "mileagePerGas": "4KM/1-lt"
     }
   ],

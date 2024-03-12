@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 import logo from "../../assets/Logo.png";
 import phone from "../../assets/phone.png";
 import email from "../../assets/mail.png";
@@ -30,7 +31,7 @@ const Footer = () => {
       <div className="footer-section">
         <h4>Menu</h4>
         <ul>
-          <li>Home</li>
+          <li><Link to="/">Home</Link></li> 
           <li>Car Catalogue</li>
           <li>Services</li>
         </ul>
@@ -55,7 +56,7 @@ const Footer = () => {
           </li>
           <li>
             <img src={email} alt="location" />
-            tagred@gmail.com
+            tagred@gmail.com 
           </li>
         </ul>
       </div>

@@ -7,6 +7,7 @@ import {addToCart} from "../../utils/api"
 const ProductPurchase = ({ colors, price , item}) => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [quantity, setQuantity] = useState(1);
+  const [finalPrice, setFinalPrice] = useState(price);
 
   const handleColorSelect = (color) => {
     setSelectedColor(color);
@@ -14,11 +15,11 @@ const ProductPurchase = ({ colors, price , item}) => {
 
   const handleQuantityChange = (number) => {
     setQuantity(number);
+    setFinalPrice(price * number )
   };
 
   const addCart = () => {
-    // console.log("Add to cart:", { selectedColor, quantity });
-    const data= {...item, colors: selectedColor }
+    const data= {...item, colors: selectedColor , quantity:quantity}
     addToCart(data)
   };
 
@@ -42,7 +43,7 @@ const ProductPurchase = ({ colors, price , item}) => {
           quantity={quantity}
           handleQuantityChange={handleQuantityChange}
         />
-        <h6 className="price">Price: {price} $</h6>
+        <h6 className="price">Price: {finalPrice} $</h6>
       </div>
 
       <div className="action-buttons">

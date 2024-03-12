@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import logo from "../../assets/Logo.png";
 import mycart from "../../assets/my-cart.png";
 import "./NavBar.css";
@@ -8,10 +8,23 @@ import useNavbarBackground from "../../hooks/useNavbarBackground";
 const Navbar = () => {
   const [collaps, setCollaps] = useState(false);
   const menuState = () => setCollaps((isCollapsed) => !isCollapsed);
-  const menuCollaps = collaps ? `nav-menu-display fade` : "";
+  const menuCollaps = collaps ? `nav-menu-display fade-in` : "fade-out" ;
 
   const navigate = useNavigate();
   const hasScrolled = useNavbarBackground();
+
+  // useEffect(() => {
+  //   if (!collaps) {
+  //     const timer = setTimeout(() => {
+  //       menuState();
+  //     }, 500); 
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [collaps]);
+
+  const fade = collaps ? 'fade-in' : 'fade-out';
+
+
 
   return (
     <header>
