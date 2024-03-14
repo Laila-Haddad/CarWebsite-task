@@ -32,29 +32,27 @@
   margin-bottom: 30px;
 }
 
-.landing-img-small,
-.landing-car-small {
-  display: none;
-}
-
 @media (max-width: 750px) {
+  .landing {
+    flex-direction: column;
+  }
+
+  .landing-image {
+    max-width: 100%;
+    margin-bottom: -150px;
+    z-index: -240;
+  }
+
   .landing-image img {
-    display: none;
+    transform: translateX(60px) translateY(-120px);
   }
-  .landing button {
-    margin: auto;
-    display: block;
-  }
-  .landing-img-small {
-    display: block;
-    position: absolute;
-    width: 100%;
-    transform: rotateY(180deg);
-    height:70%;
-    left: 0;
-    z-index: -1;
-  }
-
-
 }
 
+@media (max-width: 550px) {
+  .landing-image img {
+    transform: scale3d(1.2, 1.2, 1.2) translateX(10px) translateY(-40px);
+  }
+  .landing-image {
+    margin-bottom: -60px;
+  }
+}
