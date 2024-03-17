@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext , useState } from "react";
 import "./ProductDisplay.css";
 import seats from "../../assets/seat-icon.png";
 import milage from "../../assets/milage-icon.png";
 import wheel from "../../assets/wheel-icon.png";
 import { truncateString } from "../../utils/utils";
 import { Link, useNavigate } from "react-router-dom";
+import { CartContext } from "../../contexts/CartProvider";
+import Alert from "../Alert/Alert";
+
 
 const GridDisplay = ({ element }) => {
+  const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false);
 
   return (
     <div
@@ -50,7 +55,21 @@ const GridDisplay = ({ element }) => {
           >
             Details &gt;
           </button>
-          <button className="filled-btn">Buy Now</button>
+          <button
+            className="filled-btn"
+            onClick={(e) => {
+              e.stopPropagation(); 
+              addToCart(element);
+              setShowAlert(true);
+            }}
+          >
+            Buy Now
+          </button>
+          <Alert
+        message="Item added to cart!"
+        show={showAlert}
+        onClose={() => setShowAlert(false)}
+      />
         </div>
       </div>
     </div>

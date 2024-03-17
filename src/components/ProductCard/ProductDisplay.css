@@ -161,7 +161,7 @@
 
 .grid-container .car-actions {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 16px;
 }
 

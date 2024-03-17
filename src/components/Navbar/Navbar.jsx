@@ -1,30 +1,35 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import logo from "../../assets/Logo.png";
 import mycart from "../../assets/my-cart.png";
 import "./NavBar.css";
 import { Link, useNavigate, NavLink } from "react-router-dom";
 import useNavbarBackground from "../../hooks/useNavbarBackground";
+import CartContext from "../../contexts/CartProvider";
 
 const Navbar = () => {
   const [collaps, setCollaps] = useState(false);
   const menuState = () => setCollaps((isCollapsed) => !isCollapsed);
-  const menuCollaps = collaps ? `nav-menu-display fade-in` : "fade-out" ;
+  const menuCollaps = collaps ? `nav-menu-display fade-in` : "fade-out";
 
   const navigate = useNavigate();
   const hasScrolled = useNavbarBackground();
+
+  const { cart } = useContext(CartContext);
+  const [itemNumber, setItemNumber] = useState(0);
 
   // useEffect(() => {
   //   if (!collaps) {
   //     const timer = setTimeout(() => {
   //       menuState();
-  //     }, 500); 
+  //     }, 500);
   //     return () => clearTimeout(timer);
   //   }
   // }, [collaps]);
+  // const fade = collaps ? "fade-in" : "fade-out";
 
-  const fade = collaps ? 'fade-in' : 'fade-out';
-
-
+  useEffect(() => {
+    setItemNumber(cart.length);
+  }, [cart]);
 
   return (
     <header>
@@ -53,15 +58,15 @@ const Navbar = () => {
           <li className="phone-nav" onClick={menuState}>
             <NavLink to="/cart">My Cart</NavLink>
           </li>
-          <li >
-            <Link >Catalogue</Link>
+          <li>
+            <Link>Catalogue</Link>
           </li>
 
-          <li >
+          <li>
             <Link>Contact Us</Link>
           </li>
-          <li >
-            <Link >Help</Link>
+          <li>
+            <Link>Help</Link>
           </li>
 
           <li className="phone-nav">
@@ -69,16 +74,20 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="nav-btns ">
-          <img
-            src={mycart}
-            alt="Show my cart"
-            width="25px"
-            height="25px"
-            style={{ cursor: "pointer" }}
+          <div
+            style={{ position: "relative" ,  cursor: "pointer"}}
             onClick={() => {
               navigate("/cart");
             }}
-          />
+          >
+            <img
+              src={mycart}
+              alt="Show my cart"
+              width="25px"
+              height="25px"
+            />
+            <span>{itemNumber}</span>
+          </div>
 
           <button className="bordered-btn">Register</button>
         </div>

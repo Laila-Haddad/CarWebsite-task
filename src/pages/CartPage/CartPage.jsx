@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useContext} from "react";
 import "./CartPage.css";
 import ProductDisplay from "../../components/ProductCard/ProductDisplay";
 import { getCart, deleteItem } from "../../utils/api";
 import back from "../../assets/cart-background.png";
+import { CartContext } from "../../contexts/CartProvider";
 
 const CartPage = () => {
-  const [cart, setCart] = useState([]);
+  const { cart } = useContext(CartContext)
 
   const fields = ["", "Products", "Price", "Color", "Delete"];
 
@@ -14,11 +15,6 @@ const CartPage = () => {
     // setCart(prevCart => [...prevCart , prevCart[key]= null])
     // deleteItem(id)
   };
-
-  useEffect(() => {
-    getCart().then(setCart);
-    // deleteItem(id).deleteCar(id)
-  }, [cart]);
 
   return (
     <>

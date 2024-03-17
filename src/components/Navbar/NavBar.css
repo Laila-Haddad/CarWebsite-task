@@ -10,10 +10,9 @@ nav {
   z-index: 100;
 }
 
-#logo{
+#logo {
   user-select: none;
   cursor: pointer;
-
 }
 .nav-menu {
   display: flex;
@@ -30,10 +29,11 @@ nav {
 .nav-menu > li > a {
   font-family: var(--righteous);
   padding: 3px 0;
-  &.active {
+  &.active , &:hover {
     color: var(--pink);
     border-bottom: solid 2px var(--pink);
   }
+  
 }
 
 .nav-btns {
@@ -42,9 +42,21 @@ nav {
   gap: 30px;
   align-items: center;
   user-select: none;
-
 }
 
+.nav-btns span {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+display: inline-block;
+text-align: center;
+  font-size: 11px;
+  border: solid 1.5px var(--pink);
+  font-family: var(--righteous);
+  position: absolute;
+  top: -5px;
+
+}
 .hamburger-menu {
   display: none;
   cursor: pointer;
@@ -69,7 +81,6 @@ nav {
   .hamburger-menu {
     display: inline-block;
     user-select: none;
-  
   }
   .nav-menu .phone-nav {
     display: flex;
@@ -90,18 +101,17 @@ nav {
     display: none;
   }
 
-
   .fade-in {
     animation-name: fade-in;
     animation-duration: 0.5s;
   }
-  
+
   @keyframes fade-in {
     0% {
       transform: translateY(-40px);
       opacity: 0;
     }
-  
+
     100% {
       transform: translatey(0);
       opacity: 1;
@@ -111,23 +121,20 @@ nav {
   .fade-out {
     animation-name: fade-out;
     animation-duration: 0.5s;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
   }
-  
+
   @keyframes fade-out {
     0% {
       transform: translateY(0);
       opacity: 1;
     }
-  
+
     100% {
       transform: translateY(-40px);
       opacity: 0;
     }
   }
-  
-  
-
 
   .nav-menu-display {
     display: flex;
@@ -137,33 +144,32 @@ nav {
     width: fit-content;
   }
 
-  .nav-btns  {
+  .nav-btns {
     display: none;
   }
 
   .nav-btns img {
     transform: translateX(30px);
-  
   }
 
   nav {
     padding: 20px 40px;
-
   }
 
-
-  .menu-overlay{
+  .menu-overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
     margin: 0 -60px;
     background-color: rgba(0, 0, 0, 0.502);
-     backdrop-filter: blur(1.1px);
+    backdrop-filter: blur(1.1px);
     z-index: 99;
   }
 }
 
 @media (max-width: 550px) {
-  nav  ,   .menu-overlay{
+  nav,
+  .menu-overlay {
     margin: 0 -30px;
-  }}
+  }
+}
