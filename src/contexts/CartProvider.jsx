@@ -12,7 +12,8 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (item) => {
     setCart((currentCart)=>{
-      return [...currentCart, item];
+    item= {...item, colors : item.colors[0]}
+      return [...currentCart,item ];
       // const itemIndex = currentCart.findIndex((i) => i.id === item.id);
       // if (itemIndex > -1) {
       //   const newItems = [...currentCart];
