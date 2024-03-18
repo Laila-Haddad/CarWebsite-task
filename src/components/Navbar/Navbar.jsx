@@ -28,7 +28,7 @@ const Navbar = () => {
   // const fade = collaps ? "fade-in" : "fade-out";
 
   useEffect(() => {
-    setItemNumber(cart.length);
+    setItemNumber(cart? cart.length : 0);
   }, [cart]);
 
   return (

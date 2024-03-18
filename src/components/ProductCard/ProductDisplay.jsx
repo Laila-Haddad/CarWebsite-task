@@ -1,26 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import GridDisplay from "./GridDisplay";
 import MenuDisplay from "./MenuDisplay";
 
-const ProductDisplay = ({ displayType , items , deleteCar}) => {
+const ProductDisplay = ({ displayType, items }) => {
+  const displayClass = displayType === "grid" ? "grid-container" : "menu-container";
 
   return (
     <>
-      {displayType === "grid" ? (
-        <div className="grid-container">
-          {items.map((element, index) => (
+      <div className={displayClass}>
+        {items.map((element, index) =>
+          displayType === "grid" ? (
             <GridDisplay key={index} element={element} />
-          ))}
-        </div>
-
-      ) : (
-
-        <div className="menu-container">
-          {items.map((element, index) => (
-            <MenuDisplay key={index} id={index} element={element}  deleteCar={deleteCar}/>
-          ))}
-        </div>
-      )}
+          ) : (
+            <MenuDisplay key={index} id={index} element={element} />
+          )
+        )}
+      </div>
     </>
   );
 };

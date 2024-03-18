@@ -7,7 +7,7 @@ const ColorSelector = ({ handleColorSelect, colors , selectedColor }) => {
     <div className="color-selector">
       {colors.map((color) => (
         <button
-          key={color}
+          key={color} 
           className={`color-button ${
             selectedColor === color ? "selected" : ""
           }`}

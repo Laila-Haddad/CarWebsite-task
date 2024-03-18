@@ -21,6 +21,7 @@ const QuantitySelector = ({ quantity, handleQuantityChange }) => {
         value={quantity}
         onChange={(e) => handleQuantityChange(parseInt(e.target.value, 10))}
         min="1" 
+        disabled
       />
       <button className="quantity-button minus filled-btn" onClick={increment}>
         +

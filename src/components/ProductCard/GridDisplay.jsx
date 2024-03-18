@@ -59,7 +59,7 @@ const GridDisplay = ({ element }) => {
             className="filled-btn"
             onClick={(e) => {
               e.stopPropagation(); 
-              addToCart(element);
+              addToCart({...element , colors: element.colors[0] , quantity:1});
               setShowAlert(true);
             }}
           >

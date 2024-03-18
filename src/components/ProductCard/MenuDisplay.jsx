@@ -1,8 +1,12 @@
-import React from "react";
+import React  , {useContext}from "react";
 import { Link, useNavigate } from "react-router-dom";
+import CartContext from "../../contexts/CartProvider";
 
-const MenuDisplay = ({ element , deleteCar , id}) => {
+const MenuDisplay = ({ element , id}) => {
   const navigate = useNavigate();
+
+  const { deleteFromCart} = useContext(CartContext)
+
   return (
     <>
       <img
@@ -34,7 +38,7 @@ const MenuDisplay = ({ element , deleteCar , id}) => {
         </div>
 
         <div className="delete-car">
-          <button onClick={()=> deleteCar(element.id , id)}>×</button>
+          <button onClick={()=> deleteFromCart(id)}>×</button>
         </div>
       </div>
     </>
