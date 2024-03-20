@@ -14,7 +14,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const hasScrolled = useNavbarBackground();
 
-  const { cart } = useContext(CartContext);
+  const { cart , cartLength } = useContext(CartContext);
   const [itemNumber, setItemNumber] = useState(0);
 
   // useEffect(() => {
@@ -25,10 +25,10 @@ const Navbar = () => {
   //     return () => clearTimeout(timer);
   //   }
   // }, [collaps]);
-  // const fade = collaps ? "fade-in" : "fade-out";
+  // const fade = collaps ? "nav-menu-display  fade-in" : "fade-out";
 
   useEffect(() => {
-    setItemNumber(cart? cart.length : 0);
+    setItemNumber(cart? cartLength : 0);
   }, [cart]);
 
   return (

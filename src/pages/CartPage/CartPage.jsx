@@ -7,7 +7,7 @@ import { CartContext } from "../../contexts/CartProvider";
 const CartPage = () => {
   const { cart } = useContext(CartContext);
 
-  const fields = ["", "Products", "Price", "Color", "Delete"];
+  const fields = ["", "Products", "Color", "Price" , "Quantity" , "Delete"];
 
   return (
     <>

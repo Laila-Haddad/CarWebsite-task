@@ -1,90 +1,15 @@
-.menu-container,
-.menu-info {
-  display: contents;
+.cartContainer{
+  display: contents 
 }
 
-.menu-container img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 15px;
-}
-
-.menu-container .menu-details1 h6 {
-  cursor: pointer;
-}
-
-.menu-container .menu-details1 h2 {
-  margin: 0;
-}
-
-.menu-container p {
-  margin: 5px 0;
-  font-family: var(--righteous);
-  text-align: left;
-}
-
-.menu-container .delete-car button {
-  background-color: transparent;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--black);
-  cursor: pointer;
-  padding-left: 20px;
-}
-
-.menu-container .delete-car button:hover {
-  color: indianred;
-}
-
-.menu-container .price-color {
-  display: contents;
-}
-
-@media (max-width: 800px) {
-  .menu-container .delete-car button {
-    padding-left: 0;
-  }
-
-  .menu-container .delete-car {
-    align-self: baseline;
-  }
-}
-
-@media (max-width: 600px) {
-  .menu-container .price-color {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-  }
-
-  .menu-container .menu-info {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-  }
-  .menu-container img {
-    width: 100px;
-  }
-  .menu-container .delete-car {
-    position: absolute;
-    top: -6px;
-    right: 0;
-  }
-}
-
-/* ****************** */
-.grid-container {
+.grid-container{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns:repeat(4, 1fr) ;
   gap: 20px;
-  /* padding: 20px; */
   justify-items: center;
 }
 
-.grid-container .car-card > div {
+.car-card > div {
   position: relative;
 }
 
@@ -127,7 +52,6 @@
   object-fit: cover;
   border-radius: 50px;
 }
-
 .grid-container .car-info {
   padding: 15px;
 }
@@ -155,7 +79,7 @@
   margin: 0;
   color: var(--dark-grey);
   font-size: 1.1em;
-  font-weight: bold;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -206,7 +130,6 @@
   .grid-container {
     grid-template-columns: 1fr;
     margin: 0 -30px;
-
   }
   .grid-container .car-card {
     margin: 10px 15px;

@@ -1,18 +1,20 @@
 import React from "react";
-import GridDisplay from "./GridDisplay";
-import MenuDisplay from "./MenuDisplay";
+import HomeDisplay from "./HomeDisplay";
+import CartDisplay from "./CartDisplay";
+import style from "./HomeDisplay.module.css";
 
 const ProductDisplay = ({ displayType, items }) => {
-  const displayClass = displayType === "grid" ? "grid-container" : "menu-container";
+  const displayClass = displayType === "grid" ? style["grid-container"] : style.cartContainer;
+
 
   return (
     <>
       <div className={displayClass}>
         {items.map((element, index) =>
           displayType === "grid" ? (
-            <GridDisplay key={index} element={element} />
+            <HomeDisplay key={index} element={element} />
           ) : (
-            <MenuDisplay key={index} id={index} element={element} />
+            <CartDisplay key={index} id={index} element={element} />
           )
         )}
       </div>

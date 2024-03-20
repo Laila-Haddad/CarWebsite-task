@@ -1,0 +1,99 @@
+.menu-info {
+  display: contents;
+}
+
+.carImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+ .menu-details1 h6 {
+  cursor: pointer;
+}
+
+ .menu-details1 h2 {
+  margin: 0;
+}
+
+ p {
+  margin: 5px 0;
+  font-family: var(--righteous);
+  text-align: left;
+}
+ .delete-car button {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+ .delete-car button:hover {
+  color: indianred;
+}
+
+.price-color {
+  display: contents;
+}
+ .menu-quant p {
+  margin-left: 20px;
+}
+
+.price-quant {
+  display: contents;
+}
+
+@media (max-width: 900px) {
+.delete-car button {
+    padding-left: 0;
+  }
+
+ .delete-car {
+    align-self: baseline;
+  }
+}
+
+@media (max-width: 700px) {
+.price-color {
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: row-reverse; */
+  }
+
+ .price-quant {
+    display: flex;
+    position: relative;
+    & .menu-price {
+      display: flex;
+      position: relative;
+    }
+    & .menu-price p::after {
+      content: "x";
+      position: absolute;
+      top: 40;
+      font-size: 11px;
+      right: 30;
+      padding-left: 7px;
+      padding-top: 2.5px;
+    }
+  }
+
+ .menu-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+ .carImage {
+    width: 100px;
+  }
+ .delete-car {
+    position: absolute;
+    top: -6px;
+    right: 0;
+  }
+}

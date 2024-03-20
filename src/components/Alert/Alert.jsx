@@ -7,7 +7,7 @@ const Alert = ({ message, show, onClose }) => {
     if (show) {
       timer = setTimeout(() => {
         onClose();
-      }, 2500);
+      }, 1200);
     }
     return () => clearTimeout(timer);
   }, [show, onClose]);
