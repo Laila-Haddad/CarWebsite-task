@@ -9,23 +9,13 @@ import CartContext from "../../contexts/CartProvider";
 const Navbar = () => {
   const [collaps, setCollaps] = useState(false);
   const menuState = () => setCollaps((isCollapsed) => !isCollapsed);
-  const menuCollaps = collaps ? `nav-menu-display fade-in` : "fade-out";
+  const fade = collaps ? "nav-menu-display fade-in" : "fade-out";
 
   const navigate = useNavigate();
   const hasScrolled = useNavbarBackground();
 
   const { cart , cartLength } = useContext(CartContext);
   const [itemNumber, setItemNumber] = useState(0);
-
-  // useEffect(() => {
-  //   if (!collaps) {
-  //     const timer = setTimeout(() => {
-  //       menuState();
-  //     }, 500);
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [collaps]);
-  // const fade = collaps ? "nav-menu-display  fade-in" : "fade-out";
 
   useEffect(() => {
     setItemNumber(cart? cartLength : 0);
@@ -37,7 +27,7 @@ const Navbar = () => {
       <nav
         style={
           hasScrolled
-            ? { backgroundColor: "white", transition: "ease 0.3s" }
+            ? { backgroundColor: "white", transition: "ease 0.3s"}
             : { backgroundColor: "transparent", transition: "ease 0.3s" }
         }
       >
@@ -51,7 +41,7 @@ const Navbar = () => {
             navigate("/");
           }}
         />
-        <ul className={`nav-menu  ${menuCollaps}`}>
+        <ul className={`nav-menu  ${fade}`}>
           <li onClick={menuState}>
             <NavLink to="/">Home</NavLink>
           </li>

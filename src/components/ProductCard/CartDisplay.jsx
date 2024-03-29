@@ -10,7 +10,7 @@ const CartDisplay = ({ element, id }) => {
   return (
     <>
       <img
-        src={element.imageUrl}
+        src={element.images[0]}
         alt={element.name}
         width="100px"
         onClick={() => {

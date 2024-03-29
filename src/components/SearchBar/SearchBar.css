@@ -25,6 +25,25 @@
   font-size: 1.1em;
 }
 
+.filter span{
+  display: none;
+}
+
+.filter  .css-1xc3v61-indicatorContainer , .filter .css-15lsz6c-indicatorContainer{
+  padding: 0;
+  padding-left: 5px;
+  
+}
+
+.filter .css-1jj59y3-MenuList2{
+  /* width: fit-content; */
+  scrollbar-width: thin;
+}
+
+.filter .css-1dimb5e-singleValue{
+  overflow: visible;
+  color: var(--dark-grey);
+}
 
 .dropdown {
   width: 100%;
@@ -117,3 +136,6 @@
     text-align: center;
   }
 }
+
+
+

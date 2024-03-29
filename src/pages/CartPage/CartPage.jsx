@@ -3,11 +3,13 @@ import "./CartPage.css";
 import ProductDisplay from "../../components/ProductCard/ProductDisplay";
 import back from "../../assets/cart-background.png";
 import { CartContext } from "../../contexts/CartProvider";
+import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const { cart } = useContext(CartContext);
+  const navigate = useNavigate();
 
-  const fields = ["", "Products", "Color", "Price" , "Quantity" , "Delete"];
+  const fields = ["", "Products", "Color", "Price", "Quantity", "Delete"];
 
   return (
     <>
@@ -22,7 +24,22 @@ const CartPage = () => {
             <ProductDisplay items={cart} displayType="menu"></ProductDisplay>
           </div>
         ) : (
-          <h2>There is nothing to show yet...</h2>
+          <div className="empty-cart">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+            <h3>There is nothing to show yet...</h3>
+            <br></br>
+
+            <button
+              onClick={() => navigate("/")}
+              className="filled-btn cart-btn"
+            >
+              Browse products
+            </button>
+          </div>
         )}
       </div>
     </>

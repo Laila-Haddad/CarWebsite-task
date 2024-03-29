@@ -101,20 +101,41 @@ a {
 .filled-btn {
   background-color: var(--pink);
   color: var(--white);
+  transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
+
   &:hover {
     background-color: var(--white);
     color: var(--pink);
+  transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
+
   }
 }
 
 .bordered-btn {
   background-color: var(--white);
   color: var(--pink);
+  transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
+
   &:hover {
     background-color: var(--pink);
     color: var(--white);
+    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
+
+
   }
 }
+
+.found-background{
+  background-image: url("./found.svg");
+  background-repeat: no-repeat;
+  z-index: -12;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center 0 ;
+}
+
 
 @media (max-width: 800px) {
   h1 {

@@ -40,7 +40,7 @@ const cars = [
     description:
       "An homage to Ferrari's most powerful V8 engine. A marvel of engineering and design, with unparalleled performance.",
     rating: 4,
-    colors: ["red", "yellow", "black"],
+    colors: ["red", "gold", "black"],
     mileagePerGas: "4KM/1-lt",
   },
   {
@@ -127,6 +127,27 @@ const cars = [
     colors: ["green", "black", "silver"],
     mileagePerGas: "4KM/1-lt",
   },
+  {
+    id: "7",
+    name: "Aston Martin ",
+    engine: "6000 cc",
+    brand: "Aston",
+    imageUrl: "cars/car2.png",
+    images: [
+      "cars/car2.png",
+      "cars/car2.png",
+      "cars/car3.png",
+      "cars/car4.png",
+    ],
+    type: "auto",
+    rentPrice: 1100,
+    numOfSeats: 4,
+    description:
+      "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+    rating: 3.7,
+    colors: ["green", "black", "silver"],
+    mileagePerGas: "4KM/1-lt",
+  },
 ];
 
 const brands = [
@@ -194,4 +215,203 @@ const brands = [
 
 const cart = [];
 
-export  { cars, brands, cart };
+const rating = [
+  4, 3.5, 4, 4.5, 5, 4, 3, 3.5,
+
+  4, 4.5, 5, 3.5, 3, 3.5, 4, 4,
+
+  5, 4.5, 3, 3.5, 4, 4.5, 5, 4,
+
+  4, 3.5, 4, 4.5, 5, 4.5,
+];
+const colors = [
+  ["purple", "blue", "green"],
+
+  ["pink", "purple", "blue"],
+
+  ["purple", "orange"],
+
+  ["black", "silver"],
+
+  ["green", "pink", "gold"],
+
+  ["red", "black", "blue"],
+
+  ["blue", "silver"],
+
+  ["red", "gold"],
+
+  ["blue"],
+
+  ["purple", "red"],
+
+  ["red"],
+
+  ["purple", "red", "pink"],
+
+  ["gold", "purple"],
+
+  ["black", "pink"],
+
+  ["purple", "green", "black"],
+
+  ["gold", "gold"],
+
+  ["gold", "black", "purple"],
+
+  ["purple", "violet", "indigo"],
+
+  ["blue", "purple"],
+
+  ["red"],
+
+  ["green", "gold", "black"],
+
+  ["gold", "black"],
+
+  ["blue"],
+
+  ["black", "pink", "green"],
+
+  ["pink", "gold"],
+
+  ["purple", "green", "pink"],
+
+  ["orange", "white", "green"],
+
+  ["blue", "gold", "black"],
+
+  ["pink", "blue"],
+
+  ["green", "purple"],
+];
+const images = [
+  ["cars/car1.png", "cars/car5.png", "cars/car9.png", "cars/car2.png"],
+
+  ["cars/car2.png", "cars/car4.png", "cars/car8.png", "cars/car3.png"],
+
+  ["cars/car3.png", "cars/car9.png", "cars/car4.png", "cars/car1.png"],
+
+  ["cars/car4.png", "cars/car3.png", "cars/car2.png", "cars/car8.png"],
+
+  ["cars/car5.png", "cars/car6.png", "cars/car1.png", "cars/car2.png"],
+
+  ["cars/car6.png", "cars/car7.png", "cars/car2.png", "cars/car1.png"],
+
+  ["cars/car7.png", "cars/car8.png", "cars/car3.png", "cars/car1.png"],
+
+  ["cars/car8.png", "cars/car6.png", "cars/car7.png", "cars/car3.png"],
+
+  ["cars/car9.png", "cars/car1.png", "cars/car6.png", "cars/car6.png"],
+
+  ["cars/car10.png", "cars/car8.png", "cars/car5.png", "cars/car9.png"],
+
+  ["cars/car11.png", "cars/car2.png", "cars/car7.png", "cars/car9.png"],
+
+  ["cars/car12.png", "cars/car7.png", "cars/car10.png", "cars/car9.png"],
+
+  ["cars/car13.png", "cars/car5.png", "cars/car8.png", "cars/car4.png"],
+
+  ["cars/car14.png", "cars/car8.png", "cars/car23.png", "cars/car4.png"],
+
+  ["cars/car15.png", "cars/car9.png", "cars/car12.png", "cars/car5.png"],
+
+  ["cars/car16.png", "cars/car7.png", "cars/car8.png", "cars/car1.png"],
+
+  ["cars/car17.png", "cars/car7.png", "cars/car3.png", "cars/car2.png"],
+
+  ["cars/car18.png", "cars/car7.png", "cars/car1.png", "cars/car9.png"],
+
+  ["cars/car19.png", "cars/car3.png", "cars/car9.png", "cars/car15.png"],
+
+  ["cars/car20.png", "cars/car4.png", "cars/car9.png", "cars/car8.png"],
+
+  ["cars/car21.png", "cars/car8.png", "cars/car2.png", "cars/car3.png"],
+
+  ["cars/car22.png", "cars/car7.png", "cars/car4.png", "cars/car6.png"],
+
+  ["cars/car23.png", "cars/car4.png", "cars/car7.png", "cars/car3.png"],
+
+  ["cars/car24.png", "cars/car3.png", "cars/car16.png", "cars/car7.png"],
+
+  ["cars/car25.png", "cars/car4.png", "cars/car2.png", "cars/car17.png"],
+
+  ["cars/car26.png", "cars/car8.png", "cars/car6.png", "cars/car3.png"],
+
+  ["cars/car27.png", "cars/car5.png", "cars/car3.png", "cars/car22.png"],
+
+  ["cars/car28.png", "cars/car1.png", "cars/car9.png", "cars/car5.png"],
+
+  ["cars/car29.png", "cars/car3.png", "cars/car9.png", "cars/car8.png"],
+
+  ["cars/car30.png", "cars/car23.png", "cars/car19.png", "cars/car18.png"],
+];
+
+const descriptions = [
+  "A marvel of engineering and design, with unparalleled performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "An homage to Ferrari's most powerful V8 engine. A marvel of engineering and design, with unparalleled performance.",
+
+  "A flagship model representing the pinnacle of Lamborghini's legacy. A marvel of engineering and design, with unparalleled performance.",
+
+  "Iconic design, relentless performance, and unparalleled legacy. A marvel of engineering and design, with unparalleled performance.",
+
+  "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+  "Iconic design, relentless performance, and unparalleled legacy. A marvel of engineering and design, with unparalleled performance.",
+
+  "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+  "Iconic design, relentless performance, and unparalleled legacy. A marvel of engineering and design, with unparalleled performance.",
+
+  "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+  "Iconic design, relentless performance, and unparalleled legacy. A marvel of engineering and design, with unparalleled performance.",
+
+  "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+  "Iconic design, relentless performance, and unparalleled legacy. A marvel of engineering and design, with unparalleled performance.",
+
+  "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+  "Iconic design, relentless performance, and unparalleled legacy. A marvel of engineering and design, with unparalleled performance.",
+
+  "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "Innovation, performance, and striking aesthetics meet. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+
+  "A super GT offering the best of luxury and performance. A marvel of engineering and design, with unparalleled performance.",
+];
+
+const seats = [
+  4, 2, 4,2, 2,  4, 2, 2,
+
+  4, 2, 2, 4, 4, 2, 4, 4,
+
+  4, 4, 2, 4, 4, 4, 2, 4,
+
+  4, 2, 4, 2, 4, 2,
+];
+
+export { cars, brands, cart, rating, colors, images, descriptions , seats};

@@ -47,9 +47,11 @@ const ImageSlider = ({ items, display , handleImage=null}) => {
           onClick={() => changeSlide(offset - 1)}
           className="left-control"
         />
+        {/* <div className="images-slides"> */}
         {slides.map((item, index) => (
           <ImageSlide key={index} index={index} item={item} display={display} />
         ))}
+        {/* </div> */}
 
         <img
           src={display === "home" ? SlideForward : ArrowForward}

@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getCart, addCar, deleteCar } from "../utils/api";
+import { useCookies } from "react-cookie";
 
 export const CartContext = createContext({
   cart: [],
@@ -8,17 +9,21 @@ export const CartContext = createContext({
 });
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState(() => {
-    const saved = localStorage.getItem("cart");
-    return JSON.parse(saved) || [];
-  });
+  const [cookies, setCookie] = useCookies(["cart" , "consent"]);
+  const [cart, setCart] = useState(() => (
+    
+    cookies.consent==true ?  cookies.cart || [] : []
+    //const saved = localStorage.getItem("cart");
+    // return JSON.parse(saved) || [];
+  ));
+
   const [cartLength, setCartLength] = useState(
     cart.reduce((sum, car) => {
       return sum + car.quantity;
     }, 0)
   );
 
-  useEffect(() => {
+  // useEffect(() => {
     // try {
     //   const saved = localStorage.getItem("cart");
     //   if (saved) {
@@ -28,10 +33,13 @@ export const CartProvider = ({ children }) => {
     // } catch (error) {
     //   console.error("could not fetch data" + error);
     // }
-  }, [])
-  
+  // }, []);
+
   useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
+    // localStorage.setItem("cart", JSON.stringify(cart));
+    const expires = new Date();
+    expires.setTime(expires.getTime() + 10 * 24 * 60 * 60 * 1000);
+    setCookie("cart", cart, { path: "/", expires: expires });
   }, [cart]);
 
   const addToCart = (item) => {

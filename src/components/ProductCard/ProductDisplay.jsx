@@ -3,6 +3,8 @@ import HomeDisplay from "./HomeDisplay";
 import CartDisplay from "./CartDisplay";
 import style from "./HomeDisplay.module.css";
 
+
+
 const ProductDisplay = ({ displayType, items }) => {
   const displayClass = displayType === "grid" ? style["grid-container"] : style.cartContainer;
 

@@ -3,7 +3,10 @@
   margin: 0;
   padding-top: 5px;
 }
-
+.productPage{
+  height: 90vh;
+  margin-top: 110px;
+}
 .product-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -17,6 +20,7 @@
   margin: auto;
   max-width: 300px;
   object-fit: cover;
+  border-radius: 50px;
 }
 
 .body-background {
