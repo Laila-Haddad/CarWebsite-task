@@ -126,7 +126,7 @@ a {
 }
 
 .found-background{
-  background-image: url("./found.svg");
+  background-image: url("/found.svg");
   background-repeat: no-repeat;
   z-index: -12;
   right: 0;

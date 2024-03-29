@@ -24,7 +24,7 @@
 }
 
 .body-background {
-  background-image: url("../../assets/details-background.png");
+  background-image: url("/details-background.png");
   background-repeat: no-repeat;
   z-index: -12;
   right: 0;

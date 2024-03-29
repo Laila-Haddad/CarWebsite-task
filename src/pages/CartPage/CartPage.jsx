@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./CartPage.css";
 import ProductDisplay from "../../components/ProductCard/ProductDisplay";
-import back from "../../assets/cart-background.png";
+import back from "/cart-background.png";
 import { CartContext } from "../../contexts/CartProvider";
 import { useNavigate } from "react-router-dom";
 

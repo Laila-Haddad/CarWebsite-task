@@ -41,6 +41,12 @@
 .grid-container .car-card {
   border-radius: 15px;
   min-width: 300px;
+
+}
+
+.carImageContainer{
+  background-color: #0000004d;
+  border-radius: 50px;
 }
 
 .grid-container .car-image {

@@ -41,7 +41,7 @@ const HomeDisplay = ({ element }) => {
             navigate(`/cars/${element.id}`);
           }}
         >
-          <div>
+          <div className={style.carImageContainer}>
             <img
               src={`${element.images[0]}`}
               alt={`Image of ${element.name}`}
