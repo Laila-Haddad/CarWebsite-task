@@ -38,6 +38,7 @@
   position: relative;
   cursor: pointer;
   flex: 0 0 auto;
+
 }
 
 .slider-image , .home-slider-image {
@@ -47,6 +48,8 @@
   user-select: none;
   object-fit: cover;
   border-radius: 15px;
+background-color: #0000004d;
+
 }
 
 

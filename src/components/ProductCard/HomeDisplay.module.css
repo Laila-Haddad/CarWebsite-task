@@ -51,6 +51,8 @@
   user-select: none;
   object-fit: cover;
   border-radius: 50px;
+background-color: #0000004d;
+
 }
 .grid-container .car-info {
   padding: 15px;

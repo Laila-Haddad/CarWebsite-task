@@ -10,14 +10,19 @@ export const CarProvider = ({ children }) => {
     getCars()
       .then((items) => {
         setCars(items);
-        const allBrands = new Set(items.map((item) => { return { brand:  item.brand , image: item.images[0]}}));
-        setBrands(Array.from(allBrands));
+        const uniqueBrands = items.reduce((acc, item) => {
+          if (!acc.some((accItem) => accItem.brand === item.brand)) {
+            acc.push({ brand: item.brand, image: item.images[0] });
+          }
+          return acc;
+        }, []);
+
+        setBrands(uniqueBrands);
       })
       .catch((error) => {
         console.error("Failed to fetch cars:", error);
       });
   }, []);
-  
 
   const value = {
     cars,

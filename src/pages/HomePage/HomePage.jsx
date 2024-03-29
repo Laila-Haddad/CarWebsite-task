@@ -55,6 +55,7 @@ const HomePage = () => {
     setSearchedCars(filteredResults.length > 0 ? filteredResults : []);
   };
 
+  const items=[cars , brands]
   return (
     <>
       <div>
@@ -63,7 +64,7 @@ const HomePage = () => {
       {cars && brands && cars.length>0 ? (
         <>
           <div>
-            <SearchBar items={[cars , brands]} handleSearch={handleSearch}></SearchBar>
+            <SearchBar items={items} handleSearch={handleSearch}></SearchBar>
           </div>
           <div>
             <h2>Find by Car Brand</h2>

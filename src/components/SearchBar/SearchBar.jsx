@@ -24,7 +24,7 @@ const SearchBar = ({ items ,  handleSearch }) => {
 
 
   const brandOptions = brands.map((item) => {
-    return { value: item, label: item };
+    return { value: item.brand, label: item.brand };
   });
 
   const nameOptions = cars.map((item) => {
