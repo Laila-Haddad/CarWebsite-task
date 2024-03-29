@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getCarDetails, getCars, searchByCarName } from "../utils/api";
+import { sortByAtrr } from "../utils/utils";
+
 
 const CarContext = createContext();
 export const CarProvider = ({ children }) => {
@@ -9,11 +11,13 @@ export const CarProvider = ({ children }) => {
   useEffect(() => {
     getCars()
       .then((items) => {
+        sortByAtrr(items ,"brand" )
         setCars(items);
         const uniqueBrands = items.reduce((acc, item) => {
           if (!acc.some((accItem) => accItem.brand === item.brand)) {
             acc.push({ brand: item.brand, image: item.images[0] });
           }
+          sortByAtrr(acc ,"brand" )
           return acc;
         }, []);
 

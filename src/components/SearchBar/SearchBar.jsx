@@ -13,8 +13,8 @@ const filterData = [
   { name: "Engine Capacity", id: "engine", icon: capacityIcon },
 ];
 
-const SearchBar = ({ items ,  handleSearch }) => {
-  const [cars, brands] = items
+const SearchBar = ({ items, handleSearch }) => {
+  const [cars, brands] = items;
   const [selectedOptions, setSelectedOptions] = useState({
     name: null,
     brand: null,
@@ -22,13 +22,12 @@ const SearchBar = ({ items ,  handleSearch }) => {
     engine: null,
   });
 
-
   const brandOptions = brands.map((item) => {
     return { value: item.brand, label: item.brand };
   });
 
   const nameOptions = cars.map((item) => {
-    return { value: item.name, label: item.brand + " " +item.name };
+    return { value: item.name, label: item.brand + " " + item.name };
   });
 
   const priceRanges = [
@@ -67,14 +66,16 @@ const SearchBar = ({ items ,  handleSearch }) => {
           />
         ))}
       </div>
+      <a href="#products">
       <button
         className="filled-btn"
         onClick={() => {
           return handleSearch(selectedOptions);
         }}
       >
+        
         Search
-      </button>
+      </button></a>
     </div>
   );
 };
