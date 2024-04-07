@@ -12,6 +12,52 @@
   --roboto: "Roboto", sans-serif;
 }
 
+body.dark {
+  --black: #dedede;
+  --white: #1c1c1d;
+  --dark-grey: #b2b0b0;
+  --grey: #171717;
+  --pink: #c09296;
+  --light-pink: #dfd2d3;
+
+  & h4,
+  span,
+  h2,
+  h1,
+  h3,
+  h6,
+  p {
+    color: var(--black) !important ;
+  }
+
+  & #search-bar {
+    background-color: var(--grey) !important;
+    box-shadow: none !important;
+  }
+
+  .bordered-btn {
+    background-color: var(--white);
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--pink);
+      color: var(--white);
+    }
+  }
+
+  .filled-btn {
+    background-color: var(--pink);
+    color: var(--white);
+    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
+
+    &:hover {
+      background-color: var(--white);
+      color: var(--black);
+      transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
+    }
+  }
+}
+
 html {
   scroll-behavior: smooth;
   overflow-y: scroll;
@@ -25,6 +71,7 @@ html {
 }
 
 body {
+  background-color: var(--white);
   padding: 0 60px;
   /* min-height: 100vh; */
 }
@@ -91,7 +138,8 @@ a {
   cursor: pointer;
   border-radius: 20px;
   font-family: var(--righteous);
-  width: 130px;
+  width: fit-content;
+  padding: 0 20px;
   height: 40px;
   font-size: 1.1em;
   border: solid 1.5px var(--pink);
@@ -106,8 +154,7 @@ a {
   &:hover {
     background-color: var(--white);
     color: var(--pink);
-  transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
-
+    transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
   }
 }
 
@@ -120,20 +167,7 @@ a {
     background-color: var(--pink);
     color: var(--white);
     transition: cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.15s;
-
-
   }
-}
-
-.found-background{
-  background-image: url("/found.svg");
-  background-repeat: no-repeat;
-  z-index: -12;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center 0 ;
 }
 
 
@@ -167,4 +201,17 @@ a {
   body {
     padding: 0 30px;
   }
+}
+
+
+
+.notFoundDark , .notFound{
+  position: absolute;
+  z-index: -12;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 110% ;
+  object-fit:cover;
+  object-position: top center;
 }

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import styles from "./CookieConsent.module.css";
+import { useTheme } from "../../contexts/ThemeProvider";
+
+
 
 const CookieConsent = () => {
+  const {theme } = useTheme();
+
   const [cookies, setCookies] = useCookies(["consent"]);
   const [banner, setBanner] = useState(true);
 
@@ -22,10 +27,11 @@ const CookieConsent = () => {
   };
 
   let isClosed = banner ? styles.cookieConsent : styles.closed;
+  let style = theme =='dark'? styles.dark :""
   return (
     <>
       {cookies.consent == null ? (
-        <><div className={isClosed}>
+        <><div className={`${isClosed} ${style}` }>
           {show == false ? (
             <>
               <p>

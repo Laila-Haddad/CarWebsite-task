@@ -18,6 +18,11 @@
   animation-duration: 1s;
 }
 
+.dark{
+  background-image: url("../../assets/cookieDark.svg");
+
+}
+
 @keyframes fade-in {
   0% {
     transform: translateY(100px);

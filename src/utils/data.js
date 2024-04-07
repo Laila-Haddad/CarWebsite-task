@@ -1,7 +1,7 @@
 const cars = [
   {
     id: "1",
-    name: "Bugatti Chiron",
+    name: "Chiron",
     engine: "6000 cc",
     brand: "Bugatti",
     imageUrl: "cars/car1.png",
@@ -24,7 +24,7 @@ const cars = [
   },
   {
     id: "2",
-    name: "Ferrari F8 Tributo",
+    name: "F8 Tributo",
     engine: "4000 cc",
     brand: "Ferrari",
     imageUrl: "cars/car2.png",
@@ -45,7 +45,7 @@ const cars = [
   },
   {
     id: "3",
-    name: "Lamborghini Aventador",
+    name: "Aventador",
     engine: "6400 cc",
     brand: "Lamborghini",
     imageUrl: "cars/car3.png",
@@ -66,7 +66,7 @@ const cars = [
   },
   {
     id: "4",
-    name: "Porsche 911 Turbo S",
+    name: "911 Turbo S",
     engine: "6330 cc",
     brand: "Porsche",
     imageUrl: "cars/car4.png",
@@ -87,7 +87,7 @@ const cars = [
   },
   {
     id: "5",
-    name: "McLaren 720S",
+    name: "720S",
     engine: "4000 cc",
     brand: "McLaren",
     imageUrl: "cars/car5.png",
@@ -108,7 +108,7 @@ const cars = [
   },
   {
     id: "6",
-    name: "Aston Martin DBS Superleggera",
+    name: "Martin DBS Superleggera",
     engine: "6000 cc",
     brand: "Aston",
     imageUrl: "cars/car6.png",
@@ -129,7 +129,7 @@ const cars = [
   },
   {
     id: "7",
-    name: "Aston Martin ",
+    name: "Martin ",
     engine: "6000 cc",
     brand: "Aston",
     imageUrl: "cars/car2.png",

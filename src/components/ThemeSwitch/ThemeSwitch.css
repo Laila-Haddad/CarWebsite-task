@@ -1,0 +1,67 @@
+.switch-container {
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+  .switch-container {
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+  .toggle {
+    width: 30px !important;
+    height: 30px !important;
+
+  }
+
+  .icon{
+    width: 22px !important;
+  margin-top: 4px!important;
+
+  }
+}
+
+.toggle {
+  background-color: var(--pink);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1;
+}
+
+.input {
+  display: none;
+}
+
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 400ms;
+  margin-top: 5px;
+  width: 30px ;
+}
+
+.icon--moon {
+  transition-delay: 200ms;
+  color: rgb(57, 35, 95);
+}
+
+.icon--sun {
+  transform: scale(0);
+  color: rgb(230, 222, 6);
+}
+
+#switch:checked + .icon--moon {
+  transform: rotate(360deg) scale(0);
+}
+
+#switch:checked ~ .icon--sun {
+  transition-delay: 200ms;
+  transform: scale(1) rotate(360deg);
+}

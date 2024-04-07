@@ -45,12 +45,10 @@ const HomePage = () => {
     }
 
     if (params.engine) {
-      let [minEngine, maxEngine] = params.engine.split("-").map(Number);
 
-      filteredResults = filteredResults.filter((item) => {
-        const engine = Number(item.engine.substring(0, 3));
-        return engine >= minEngine && engine < maxEngine;
-      });
+      filteredResults = filteredResults.filter(
+        (item) => item.type === params.engine
+      );
     }
     setSearchedCars(filteredResults.length > 0 ? filteredResults : []);
   };

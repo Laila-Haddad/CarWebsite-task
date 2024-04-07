@@ -29,11 +29,20 @@ nav {
 .nav-menu > li > a {
   font-family: var(--righteous);
   padding: 3px 0;
-  &.active , &:hover {
+  &.active,
+  &:hover {
     color: var(--pink);
     border-bottom: solid 2px var(--pink);
   }
-  
+}
+
+.darkNavScroll > li > a,
+body.dark span.darkNavScroll {
+  color: var(--black) !important;
+}
+.darkNavNo > li > a,
+body.dark span.darkNavNo {
+  color: var(--white) !important;
 }
 
 .nav-btns {
@@ -48,14 +57,17 @@ nav {
   border-radius: 50%;
   width: 18px;
   height: 18px;
-display: inline-block;
-text-align: center;
+  display: inline-block;
+  text-align: center;
   font-size: 11px;
   border: solid 1.5px var(--pink);
   font-family: var(--righteous);
   position: absolute;
   top: -5px;
+}
 
+nav .display {
+  display: contents;
 }
 .hamburger-menu {
   display: none;
@@ -86,19 +98,19 @@ text-align: center;
     display: flex;
   }
 
-  .nav-menu {
-    position: fixed;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0 -40px;
-    top: 0px;
-    text-align: center;
-    background-color: var(--light-pink);
-    padding: 15px;
-    z-index: 2;
-    height: auto;
-    display: flex;
+
+  body.dark {
+    & .nav-menu {
+      background-color: var(--white);
+    }
+
+    & .hamburger-menu {
+      fill: var(--black);
+    }
+
+    & .nav-menu-display > li a {
+      color: var(--black) !important;
+    }
   }
 
   .fade-in {
@@ -115,6 +127,7 @@ text-align: center;
     100% {
       transform: translatey(0);
       opacity: 1;
+      z-index: 99;
     }
   }
 
@@ -122,6 +135,7 @@ text-align: center;
     animation-name: fade-out;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
+
   }
 
   @keyframes fade-out {
@@ -136,21 +150,45 @@ text-align: center;
     }
   }
 
+  .nav-menu {
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 -40px;
+    top: 0px;
+    text-align: center;
+    background-color: var(--light-pink);
+    padding: 15px;
+    display: flex;
+    z-index: -1000;
+    width: 100%;
+
+    & li  {
+      display: none;
+    }
+
+  }
+
   .nav-menu-display {
-    visibility: visible;
     display: flex;
     transition: ease-in 1s;
+    z-index: 99;
+    height: auto;
+    width: 100%;
+    & li  {
+      display: block;
+    }
   }
+
   .nav-menu > li {
     width: fit-content;
   }
-
-  .nav-btns {
-    display: none;
+  nav .nav-btns {
+    margin-left: auto;
+    margin-right: 30px;
   }
-
-  .nav-btns img {
-    transform: translateX(30px);
+  .nav-btns .bordered-btn {
+    display: none;
   }
 
   nav {

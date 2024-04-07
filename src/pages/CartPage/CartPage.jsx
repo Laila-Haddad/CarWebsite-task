@@ -1,19 +1,25 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./CartPage.css";
 import ProductDisplay from "../../components/ProductCard/ProductDisplay";
-import back from "/cart-background.png";
+import backDark from "../../assets/cart-background-dark.png";
+import back from "../../assets/cart-background.png";
+
 import { CartContext } from "../../contexts/CartProvider";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../contexts/ThemeProvider";
 
 const CartPage = () => {
   const { cart } = useContext(CartContext);
   const navigate = useNavigate();
 
+const {theme} =  useTheme()
+
+
   const fields = ["", "Products", "Color", "Price", "Quantity", "Delete"];
 
   return (
     <>
-      <img src={back} alt="back" className="cart-back" />
+      <img src={theme=='dark' ?backDark: back } alt="back" className="cart-back" />
       <div className="cart-container">
         <h3>My Cart</h3>
         {cart && cart.length > 0 ? (

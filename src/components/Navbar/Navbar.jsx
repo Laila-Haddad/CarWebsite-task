@@ -2,9 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import logo from "../../assets/Logo.png";
 import mycart from "../../assets/my-cart.png";
 import "./NavBar.css";
-import { Link, useNavigate, NavLink } from "react-router-dom";
+import { Link, useNavigate, NavLink, useLocation } from "react-router-dom";
 import useNavbarBackground from "../../hooks/useNavbarBackground";
 import CartContext from "../../contexts/CartProvider";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
+import { useTheme } from "../../contexts/ThemeProvider";
 
 const Navbar = () => {
   const [collaps, setCollaps] = useState(false);
@@ -13,21 +15,32 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const hasScrolled = useNavbarBackground();
+  const location = useLocation();
+  const { theme } = useTheme();
 
-  const { cart , cartLength } = useContext(CartContext);
+  let style =
+    theme == "dark"
+      ? location.pathname != "/cart"
+        ? "darkNavScroll"
+        : hasScrolled
+        ? "darkNavScroll"
+        : "darkNavNo"
+      : null;
+
+  const { cart, cartLength } = useContext(CartContext);
   const [itemNumber, setItemNumber] = useState(0);
 
   useEffect(() => {
-    setItemNumber(cart? cartLength : 0);
+    setItemNumber(cart ? cartLength : 0);
   }, [cart]);
 
   return (
     <header>
-      <div className={collaps ? "menu-overlay " : ""} onClick={menuState}></div>
+      <div className={collaps ? `menu-overlay` : ""} onClick={menuState}></div>
       <nav
         style={
           hasScrolled
-            ? { backgroundColor: "white", transition: "ease 0.3s"}
+            ? { backgroundColor: "var(--white)", transition: "ease 0.3s" }
             : { backgroundColor: "transparent", transition: "ease 0.3s" }
         }
       >
@@ -41,7 +54,7 @@ const Navbar = () => {
             navigate("/");
           }}
         />
-        <ul className={`nav-menu  ${fade}`}>
+        <ul className={`nav-menu ${fade} ${style} `}>
           <li onClick={menuState}>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -65,21 +78,17 @@ const Navbar = () => {
         </ul>
         <div className="nav-btns ">
           <div
-            style={{ position: "relative" ,  cursor: "pointer"}}
+            className="cart-phone"
+            style={{ position: "relative", cursor: "pointer" }}
             onClick={() => {
               navigate("/cart");
             }}
           >
-            <img
-              src={mycart}
-              alt="Show my cart"
-              width="25px"
-              height="25px"
-            />
-            <span>{itemNumber}</span>
+            <img src={mycart} alt="Show my cart" width="25px" height="25px" />
+            <span className={style}>{itemNumber}</span>
           </div>
-
           <button className="bordered-btn">Register</button>
+          <ThemeSwitch />
         </div>
         <button id="hamburger-btn" onClick={menuState}>
           <svg

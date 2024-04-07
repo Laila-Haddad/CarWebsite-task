@@ -13,7 +13,8 @@ import { CarProvider } from "./contexts/CarProvider.jsx";
 import { NotFound } from "./pages/NotFoundPage/NotFound.jsx";
 import CookieConsent from "./components/CookieConsent/CookieConsent.jsx";
 import { useCookies } from "react-cookie";
-
+import ThemeSwitch from "./components/ThemeSwitch/ThemeSwitch.jsx";
+import { ThemeProvider } from "./contexts/ThemeProvider.jsx";
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -30,7 +31,9 @@ function App() {
       <ScrollToTop />
       <CartProvider>
         <CarProvider>
-          <Navbar />
+          <ThemeProvider>
+            <Navbar />
+
           <main>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -42,6 +45,8 @@ function App() {
             </Routes>
             {!cookies.consent && <CookieConsent />}
           </main>
+          </ThemeProvider>
+
         </CarProvider>
       </CartProvider>
       <Footer />

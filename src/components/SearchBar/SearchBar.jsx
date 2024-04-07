@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 import SearchField from "./SearchField";
-import carIcon from "../../assets/car-icon.png";
-import moneyIcon from "../../assets/money-icon.png";
-import brandIcon from "../../assets/brand-icon.png";
-import capacityIcon from "../../assets/capacity-icon.png";
+import carIcon from "../../assets/car-icon.svg";
+import moneyIcon from "../../assets/money-icon.svg";
+import brandIcon from "../../assets/brand-icon.svg";
+import capacityIcon from "../../assets/capacity-icon.svg";
 
 const filterData = [
+  
   { name: "Name", id: "name", icon: carIcon },
   { name: "Brand", id: "brand", icon: brandIcon },
   { name: "Price", id: "price", icon: moneyIcon },
-  { name: "Engine Capacity", id: "engine", icon: capacityIcon },
+  { name: "Car Type", id: "engine", icon: capacityIcon },
 ];
 
 const SearchBar = ({ items, handleSearch }) => {
@@ -22,15 +23,19 @@ const SearchBar = ({ items, handleSearch }) => {
     engine: null,
   });
 
-  const brandOptions = brands.map((item) => {
+  const brand = brands.map((item) => {
     return { value: item.brand, label: item.brand };
   });
+  const brandOptions= [{ value: null, label: "Choose brand" },...brand ]
 
-  const nameOptions = cars.map((item) => {
-    return { value: item.name, label: item.brand + " " + item.name };
+
+  const names = cars.map((item) => {
+    return {  value: item.name, label: item.brand + " " + item.name };
   });
+  const nameOptions= [{ value: null, label: "Choose name" },...names ]
 
   const priceRanges = [
+    { value: null, label: "Choose price" },
     { value: "0-20", label: "Under $20k" },
     { value: "20-30", label: "$20k to $30k" },
     { value: "30-40", label: "$30k to $40k" },
@@ -38,14 +43,15 @@ const SearchBar = ({ items, handleSearch }) => {
     { value: "50-100", label: "Over $50k" },
   ];
 
-  const engineRanges = [
-    { value: "1-2", label: "1-2L" },
-    { value: "2-4", label: "2-4L" },
-    { value: "4-6", label: "4-6L" },
-    { value: "6-7", label: "6-7L" },
+  const types = [
+    { value: null, label: "Choose Type" },
+
+    { value: "Auto", label: "Auto" },
+    { value: "Manual", label: "Manual" },
+    { value: "CVT", label: "CVT" },
   ];
 
-  const options = [nameOptions, brandOptions, priceRanges, engineRanges];
+  const options = [nameOptions, brandOptions, priceRanges, types];
 
   const handleOptions = (option, attr) => {
     setSelectedOptions((prev) => ({

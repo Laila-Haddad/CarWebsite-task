@@ -9,6 +9,14 @@
   padding-right: 40px;
 }
 
+
+body.dark .cart-container > h3 {
+  color: var(--white) !important;
+  padding: 10px 0;
+  width: fit-content;
+  padding-right: 40px;
+}
+
 .cart-container .cart-menu {
   display: grid;
   grid-template-columns: 130px repeat(4, auto) 70px;
