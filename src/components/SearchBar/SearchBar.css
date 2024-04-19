@@ -9,8 +9,9 @@
   align-items: center;
   justify-items: center;
   border-radius: 40px;
-  width: 85%;
+  width: 100%;
   margin: auto;
+  margin-top: 50px;
 }
 
 .search-filters {

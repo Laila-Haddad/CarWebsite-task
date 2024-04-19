@@ -1,15 +1,18 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getCarDetails, getCars, searchByCarName } from "../utils/api";
 import { sortByAtrr } from "../utils/utils";
+import { useLocation } from "react-router-dom";
 
 
 const CarContext = createContext();
 export const CarProvider = ({ children }) => {
   const [cars, setCars] = useState([]);
   const [brands, setBrands] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
-    getCars()
+    const fetch = () => {
+      getCars()
       .then((items) => {
         sortByAtrr(items ,"brand" )
         setCars(items);
@@ -26,7 +29,13 @@ export const CarProvider = ({ children }) => {
       .catch((error) => {
         console.error("Failed to fetch cars:", error);
       });
-  }, []);
+    }
+
+    const routesThatRequireCarData = ['/', '/cars', '/cars/:id'];
+    if (routesThatRequireCarData.some(route => location.pathname === route)) {
+      fetch()
+    }
+  }, [location]);
 
   const value = {
     cars,

@@ -39,6 +39,10 @@ nav {
 .darkNavScroll > li > a,
 body.dark span.darkNavScroll {
   color: var(--black) !important;
+  &:hover , &.active{
+  color: var(--pink) !important;
+
+  }
 }
 .darkNavNo > li > a,
 body.dark span.darkNavNo {
@@ -138,6 +142,8 @@ nav .display {
 
   }
 
+
+
   @keyframes fade-out {
     0% {
       transform: translateY(0);
@@ -162,11 +168,10 @@ nav .display {
     display: flex;
     z-index: -1000;
     width: 100%;
+  }
 
-    & li  {
-      display: none;
-    }
-
+  .boob{
+    display: none;
   }
 
   .nav-menu-display {
@@ -175,9 +180,7 @@ nav .display {
     z-index: 99;
     height: auto;
     width: 100%;
-    & li  {
-      display: block;
-    }
+
   }
 
   .nav-menu > li {

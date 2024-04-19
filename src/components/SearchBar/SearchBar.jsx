@@ -61,7 +61,7 @@ const SearchBar = ({ items, handleSearch }) => {
   };
 
   return (
-    <div id="search-bar">
+    <div id="search-bar" >
       <div className="search-filters">
         {filterData.map((filter, index) => (
           <SearchField

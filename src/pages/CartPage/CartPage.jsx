@@ -31,12 +31,8 @@ const {theme} =  useTheme()
           </div>
         ) : (
           <div className="empty-cart">
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
 
-            <h3>There is nothing to show yet...</h3>
+            <h3 style={{marginTop: "80px"}}>There is nothing to show yet...</h3>
             <br></br>
 
             <button

@@ -5,7 +5,6 @@ import logo from "../../assets/Logo.png";
 import phone from "../../assets/phone.png";
 import email from "../../assets/mail.png";
 import location from "../../assets/location.png";
-
 import fb from "../../assets/facebook.png";
 import twiter from "../../assets/twiter.png";
 import insta from "../../assets/insta.png";
@@ -32,8 +31,8 @@ const Footer = () => {
         <h4>Menu</h4>
         <ul>
           <li><Link to="/">Home</Link></li> 
-          <li>Car Catalogue</li>
-          <li>Services</li>
+          <li><Link to="/cars">Car Catalog</Link></li>
+          <li><Link to="/contact">Contact us</Link></li>
         </ul>
       </div>
       <div className="footer-section">

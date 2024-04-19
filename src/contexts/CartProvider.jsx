@@ -9,13 +9,12 @@ export const CartContext = createContext({
 });
 
 export const CartProvider = ({ children }) => {
-  const [cookies, setCookie] = useCookies(["cart" , "consent"]);
-  const [cart, setCart] = useState(() => (
-    
-    cookies.consent==true ?  cookies.cart || [] : []
+  const [cookies, setCookie] = useCookies(["cart", "consent"]);
+  const [cart, setCart] = useState(() =>
+    cookies.consent == true ? cookies.cart || [] : []
     //const saved = localStorage.getItem("cart");
     // return JSON.parse(saved) || [];
-  ));
+  );
 
   const [cartLength, setCartLength] = useState(
     cart.reduce((sum, car) => {
@@ -24,15 +23,15 @@ export const CartProvider = ({ children }) => {
   );
 
   // useEffect(() => {
-    // try {
-    //   const saved = localStorage.getItem("cart");
-    //   if (saved) {
-    //     setCart(JSON.parse(saved));
-    //   }
-    //   getCart().then(setCart)
-    // } catch (error) {
-    //   console.error("could not fetch data" + error);
-    // }
+  // try {
+  //   const saved = localStorage.getItem("cart");
+  //   if (saved) {
+  //     setCart(JSON.parse(saved));
+  //   }
+  //   getCart().then(setCart)
+  // } catch (error) {
+  //   console.error("could not fetch data" + error);
+  // }
   // }, []);
 
   useEffect(() => {
@@ -64,10 +63,10 @@ export const CartProvider = ({ children }) => {
   };
 
   const deleteFromCart = (index) => {
+    setCartLength((current) => current - cart[index].quantity);
     setCart((currentCart) => {
       const updatedCart = currentCart.filter((_, i) => i !== index);
       deleteCar(index);
-      setCartLength((current) => current - currentCart[index].quantity);
       return updatedCart;
     });
   };

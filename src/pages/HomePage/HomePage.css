@@ -32,6 +32,12 @@
   margin-bottom: 30px;
 }
 
+.imgslider-h2{
+  margin-top: -40px;
+  padding-top: 0px;
+
+}
+
 @media (max-width: 750px) {
   .landing {
     flex-direction: column;
@@ -42,6 +48,12 @@
     margin-bottom: -150px;
     z-index: -240;
   }
+  .imgslider-h2{
+    margin-top: 0px;
+    padding-top: 20px;
+  
+  }
+  
 
   .landing-image img {
     transform: translateX(60px) translateY(-120px);

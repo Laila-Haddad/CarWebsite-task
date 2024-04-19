@@ -7,11 +7,15 @@ import useNavbarBackground from "../../hooks/useNavbarBackground";
 import CartContext from "../../contexts/CartProvider";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 import { useTheme } from "../../contexts/ThemeProvider";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 const Navbar = () => {
-  const [collaps, setCollaps] = useState(false);
-  const menuState = () => setCollaps((isCollapsed) => !isCollapsed);
-  const fade = collaps ? "nav-menu-display fade-in" : "fade-out";
+  const [isOpen, setIsOpen] = useState(false);
+  const setMenuState = () => setIsOpen((isisOpened) => !isisOpened);
+  const fade = isOpen ? "nav-menu-display fade-in" : " fade-out ";
+  setTimeout(() => {
+    document.querySelector(".fade-out")?.classList.add("boob");
+  }, 500);
 
   const navigate = useNavigate();
   const hasScrolled = useNavbarBackground();
@@ -36,7 +40,10 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className={collaps ? `menu-overlay` : ""} onClick={menuState}></div>
+      <div
+        className={isOpen ? `menu-overlay` : ""}
+        onClick={setMenuState}
+      ></div>
       <nav
         style={
           hasScrolled
@@ -55,18 +62,18 @@ const Navbar = () => {
           }}
         />
         <ul className={`nav-menu ${fade} ${style} `}>
-          <li onClick={menuState}>
+          <li onClick={setMenuState}>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li className="phone-nav" onClick={menuState}>
+          <li className="phone-nav" onClick={setMenuState}>
             <NavLink to="/cart">My Cart</NavLink>
           </li>
           <li>
-            <Link>Catalogue</Link>
+            <NavLink to="/cars">Catalogue</NavLink>
           </li>
 
           <li>
-            <Link>Contact Us</Link>
+            <NavLink to="/contact">Contact Us</NavLink>
           </li>
           <li>
             <Link>Help</Link>
@@ -90,17 +97,9 @@ const Navbar = () => {
           <button className="bordered-btn">Register</button>
           <ThemeSwitch />
         </div>
-        <button id="hamburger-btn" onClick={menuState}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="30"
-            viewBox="0 -960 960 960"
-            width="30"
-            className="hamburger-menu"
-          >
-            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-          </svg>
-        </button>
+        <div id="hamburger-btn">
+          <HamburgerMenu setMenuState={setMenuState} isOpen={isOpen} />
+        </div>
       </nav>
     </header>
   );
