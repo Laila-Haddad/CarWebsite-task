@@ -79,9 +79,9 @@ const Navbar = () => {
             <Link>Help</Link>
           </li>
 
-          <li className="phone-nav">
+          {/* <li className="phone-nav">
             <button className="bordered-btn">Register</button>
-          </li>
+          </li> */}
         </ul>
         <div className="nav-btns ">
           <div
@@ -94,7 +94,7 @@ const Navbar = () => {
             <img src={mycart} alt="Show my cart" width="25px" height="25px" />
             <span className={style}>{itemNumber}</span>
           </div>
-          <button className="bordered-btn">Register</button>
+          {/* <button className="bordered-btn">Register</button> */}
           <ThemeSwitch />
         </div>
         <div id="hamburger-btn">
